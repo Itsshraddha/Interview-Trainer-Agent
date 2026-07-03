@@ -1,0 +1,119 @@
+KNOWLEDGE BASE: Software Engineer Interview Questions & Guidelines
+================================================================
+
+ROLE: Software Engineer (Backend / Full-Stack / General)
+EXPERIENCE LEVELS: Entry (0-2 yrs), Mid (2-5 yrs), Senior (5+ yrs)
+
+------------------------------------------------------------------
+SECTION 1: DATA STRUCTURES & ALGORITHMS
+------------------------------------------------------------------
+
+Q: Explain the difference between an array and a linked list. When would you choose one over the other?
+A: Arrays store elements in contiguous memory, enabling O(1) random access by index but O(n) insertions/deletions at arbitrary positions. Linked lists store elements as nodes with pointers; insertion/deletion at a known node is O(1) but random access is O(n). Choose arrays when random access is frequent and size is known in advance; choose linked lists when frequent insertions/deletions at arbitrary positions are needed and memory compactness is less important.
+Tips:
+- Mention cache locality as an advantage of arrays.
+- For senior roles, discuss memory overhead of pointers and cache misses in linked lists.
+
+Q: What is the time and space complexity of common sorting algorithms?
+A: Bubble Sort O(n²) time, O(1) space. Merge Sort O(n log n) time, O(n) space. Quick Sort average O(n log n), worst O(n²) time, O(log n) space. Heap Sort O(n log n) time, O(1) space. Tim Sort (Python's default) O(n log n) time, O(n) space. For most practical use, Quick Sort or Tim Sort is preferred.
+Tips:
+- Know when to choose stable vs. unstable sorts (e.g., when preserving order of equal elements matters).
+- Discuss how Python's sort is a hybrid (Tim Sort).
+
+Q: How does a hash table work? What causes collisions and how are they resolved?
+A: A hash table maps keys to values using a hash function that computes an array index. Collisions occur when two keys hash to the same index. Resolution strategies: (1) Chaining — each bucket holds a linked list of entries; (2) Open addressing — probe for the next free slot (linear probing, quadratic probing, double hashing). Python's dict uses open addressing with pseudo-random probing.
+Tips:
+- Discuss load factor and rehashing thresholds.
+- Average-case O(1) get/set; worst-case O(n) when many collisions occur.
+
+Q: Explain binary search and its prerequisites.
+A: Binary search finds a target in a sorted array by repeatedly halving the search space. Prerequisite: the array must be sorted. Time complexity: O(log n). Implementation: maintain lo and hi pointers; compare target to mid = (lo+hi)//2; narrow the range accordingly.
+Tips:
+- Common mistake: off-by-one errors in the exit condition (use lo <= hi).
+- Mention applications: searching sorted databases, finding square roots, rotated arrays.
+
+Q: What is dynamic programming? Give an example.
+A: Dynamic programming (DP) solves problems by breaking them into overlapping subproblems, storing results to avoid recomputation (memoization or tabulation). Example: Fibonacci — naive recursion is O(2ⁿ), DP memoization is O(n). Classic DP problems: Longest Common Subsequence, 0/1 Knapsack, Coin Change, Edit Distance.
+Tips:
+- Always identify the recurrence relation first.
+- For interviews, explain the top-down (memo) vs. bottom-up (tabulation) tradeoff.
+
+------------------------------------------------------------------
+SECTION 2: OBJECT-ORIENTED PROGRAMMING
+------------------------------------------------------------------
+
+Q: What are the four pillars of OOP?
+A: (1) Encapsulation — bundling data and methods; hiding internal state. (2) Abstraction — exposing only necessary interfaces. (3) Inheritance — deriving new classes from existing ones. (4) Polymorphism — the same interface working with different underlying types (method overriding, duck typing in Python).
+Tips:
+- Give a concrete example for each pillar.
+- Mention when composition is preferred over inheritance ("favour composition over inheritance").
+
+Q: Explain SOLID principles.
+A: S — Single Responsibility: a class should have one reason to change. O — Open/Closed: open for extension, closed for modification. L — Liskov Substitution: subtypes must be substitutable for base types. I — Interface Segregation: many small interfaces > one fat interface. D — Dependency Inversion: depend on abstractions, not concretions.
+Tips:
+- Give a real code example for at least one principle (e.g., SRP: separate User and UserEmailSender classes).
+- Mention that SOLID helps with testability and maintainability.
+
+Q: What is the difference between an abstract class and an interface?
+A: Abstract classes can have concrete methods and instance variables; they represent an "is-a" relationship and support partial implementation. Interfaces (in Python: ABCs or Protocol) define a contract of methods without implementation; they represent a "can-do" relationship. Python supports multiple inheritance, which reduces the need for separate interface constructs.
+Tips:
+- Discuss when to use each in Python (ABC vs. Protocol for structural typing).
+- Mention that Java enforces the distinction more rigidly.
+
+------------------------------------------------------------------
+SECTION 3: SYSTEM DESIGN
+------------------------------------------------------------------
+
+Q: How would you design a URL shortener (like bit.ly)?
+A: Components: (1) API layer (POST /shorten, GET /:code). (2) Hash generation — base62 encoding of a counter or MD5 of URL. (3) Database — store mapping of short code → long URL (key-value store like Redis or DynamoDB is ideal). (4) Cache — Redis to serve frequent redirects with low latency. (5) Analytics — log redirects asynchronously. (6) CDN — for static assets. Scale considerations: sharding the DB by short code prefix; rate limiting the API.
+Tips:
+- Always start with requirements clarification (scale, read/write ratio, analytics needed?).
+- Mention CAP theorem tradeoffs if the interviewer probes deeper.
+
+Q: What is the difference between SQL and NoSQL databases? When would you use each?
+A: SQL (relational) databases store data in tables with a fixed schema, support ACID transactions, and use joins for related data. Best for: financial systems, complex queries, strong consistency. NoSQL databases (document, key-value, wide-column, graph) offer flexible schemas, horizontal scaling, and eventual consistency. Best for: high-throughput writes, unstructured/semi-structured data, distributed systems (e.g., MongoDB, Cassandra, Redis).
+Tips:
+- Mention NewSQL databases (CockroachDB) that attempt to combine both.
+- For senior roles, discuss eventual consistency and BASE properties.
+
+Q: Explain microservices vs. monolithic architecture.
+A: A monolith packages all components into one deployable unit — simpler to develop initially, but harder to scale and deploy independently. Microservices decompose functionality into independently deployable services communicating via APIs or message queues. Benefits: independent scaling, technology heterogeneity, fault isolation. Costs: network latency, distributed systems complexity, operational overhead.
+Tips:
+- Discuss service discovery, API gateways, and circuit breakers for microservices.
+- Mention that most successful microservices systems started as well-structured monoliths.
+
+------------------------------------------------------------------
+SECTION 4: PYTHON-SPECIFIC QUESTIONS
+------------------------------------------------------------------
+
+Q: What is the GIL in Python and how does it affect concurrency?
+A: The Global Interpreter Lock (GIL) is a mutex in CPython that prevents multiple native threads from executing Python bytecode simultaneously. It affects CPU-bound concurrent programs (threads don't truly run in parallel). Workarounds: use multiprocessing for CPU-bound tasks (separate processes, no GIL), or use asyncio for I/O-bound tasks (cooperative multitasking on a single thread).
+Tips:
+- Mention that Jython and IronPython don't have a GIL.
+- Python 3.13+ is experimenting with a "no-GIL" mode (PEP 703).
+
+Q: Explain list comprehensions vs. generator expressions in Python.
+A: List comprehensions [x for x in iterable] eagerly create a full list in memory. Generator expressions (x for x in iterable) produce items lazily one at a time, using O(1) memory regardless of input size. Use generators for large datasets or infinite sequences; use list comprehensions when you need random access or the full list multiple times.
+Tips:
+- Demonstrate with a memory-profile example for large ranges.
+- Mention that generator functions (yield) are the underlying mechanism.
+
+Q: What is the difference between deepcopy and shallow copy in Python?
+A: Shallow copy (copy.copy() or list[:]) creates a new object but does not copy nested objects — they still reference the same inner objects. Deep copy (copy.deepcopy()) recursively copies all nested objects. Pitfall: modifying a mutable nested object after a shallow copy will affect both the original and the copy.
+Tips:
+- Draw a diagram of memory layout to illustrate the difference.
+- Mention use cases: shallow copy for performance when nested objects are immutable.
+
+------------------------------------------------------------------
+SECTION 5: BEHAVIORAL/TECHNICAL CULTURAL FIT
+------------------------------------------------------------------
+
+Q: Describe a time you had to debug a difficult production issue.
+STAR Guide:
+- Situation: production outage or performance degradation.
+- Task: root-cause analysis under time pressure.
+- Action: describe tools used (logs, APM, profiler), hypothesis testing, fixes applied.
+- Result: resolution time, post-mortem, preventive measures added.
+
+Q: How do you approach code reviews?
+A: Focus on: correctness, readability, test coverage, security (e.g., injection risks), performance. Give constructive, specific feedback with suggested alternatives. Acknowledge good patterns. Prioritize blocking vs. non-blocking comments. Approach reviews as a learning opportunity for both parties.

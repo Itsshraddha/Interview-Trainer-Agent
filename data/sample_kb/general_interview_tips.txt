@@ -1,0 +1,150 @@
+KNOWLEDGE BASE: General Interview Tips & Preparation Guidelines
+================================================================
+
+------------------------------------------------------------------
+SECTION 1: BEFORE THE INTERVIEW
+------------------------------------------------------------------
+
+Research the company:
+- Understand the business model, revenue streams, and competitive landscape.
+- Read the last 2-3 earnings calls or press releases (for public companies).
+- Identify the company's stated values and recent news.
+- Look up your interviewers on LinkedIn — understand their background and what they may care about.
+- Know the job description line-by-line; map your experience to each key requirement.
+
+Prepare your story bank:
+- Write out 6-8 strong STAR stories from your career.
+- Map each story to common competencies: leadership, collaboration, problem-solving, failure, initiative.
+- Practice telling each story in under 2 minutes.
+- Quantify every result (even estimates are better than no numbers).
+
+Logistics preparation:
+- Confirm time zone for remote interviews.
+- Test your audio/video setup 30 minutes before.
+- Have water, pen, and paper nearby.
+- Have a copy of your resume and the job description visible.
+- Arrive 10-15 minutes early for in-person interviews.
+
+------------------------------------------------------------------
+SECTION 2: DURING THE INTERVIEW
+------------------------------------------------------------------
+
+First impressions:
+- Greet the interviewer by name.
+- Maintain eye contact (look at the camera for video calls, not your own image).
+- Match the interviewer's energy level — be professional but warm.
+- Have a crisp 60-second professional summary ready for "Tell me about yourself."
+
+Tell me about yourself — structure:
+1. Present: current role and main responsibilities (2-3 sentences).
+2. Past: 1-2 key experiences or achievements that led here.
+3. Future: why you are excited about this specific role and company.
+
+Handling difficult questions:
+- If you don't know an answer: say "That's a great question, let me think through it" and pause.
+- For estimation questions: think aloud, state your assumptions, show your reasoning process.
+- For hypothetical scenarios: ask clarifying questions before jumping to an answer.
+- Never lie — if you don't know something, say "I haven't worked with that directly, but here's how I would approach learning it."
+
+Technical interview tips:
+- For coding questions: clarify constraints, think aloud, start with brute force and optimize.
+- State time and space complexity before and after optimization.
+- Test your solution with edge cases (empty input, single element, duplicates, negatives).
+- For system design: always start with requirements clarification, then high-level design, then deep-dives.
+
+Body language:
+- Lean slightly forward to signal engagement.
+- Avoid crossing arms.
+- Nod when the interviewer is speaking.
+- Smile — it is appropriate even in technical interviews.
+
+------------------------------------------------------------------
+SECTION 3: ASKING QUESTIONS
+------------------------------------------------------------------
+
+Always prepare 4-5 thoughtful questions. Great questions to ask:
+
+1. "What does success look like in this role in the first 90 days?"
+2. "What are the biggest challenges someone in this role typically faces?"
+3. "How does the team handle disagreements on technical direction?"
+4. "What does the career growth path look like from this role?"
+5. "What do you personally enjoy most about working here?"
+
+Questions to avoid:
+- "What does the company do?" (shows lack of research)
+- "How much vacation do I get?" (save for the offer stage)
+- "Will I be able to work from home?" (save for the offer stage)
+- "How quickly can I get promoted?" (too forward for a first interview)
+
+------------------------------------------------------------------
+SECTION 4: AFTER THE INTERVIEW
+------------------------------------------------------------------
+
+Send a thank-you email within 24 hours:
+- Address each interviewer by name.
+- Reference a specific topic from the conversation.
+- Reiterate your interest in the role and why you are a strong fit.
+- Keep it brief (3-5 sentences).
+
+If you don't hear back:
+- Follow up after 5-7 business days with a polite email.
+- Do not follow up more than twice.
+- Continue your job search — never put all your eggs in one basket.
+
+Handling offers:
+- It is always appropriate to ask for 24-48 hours to consider.
+- Research market compensation (levels.fyi, Glassdoor, Blind) before negotiating.
+- Negotiate from a data-driven position, not emotional appeal.
+- Consider the full package: base, bonus, equity, benefits, growth, culture.
+
+------------------------------------------------------------------
+SECTION 5: COMMON INTERVIEW MISTAKES TO AVOID
+------------------------------------------------------------------
+
+1. Not researching the company before the interview.
+2. Giving vague answers without specific examples ("I'm a great communicator" vs. a STAR story).
+3. Speaking negatively about a previous employer or colleague.
+4. Failing to ask thoughtful questions.
+5. Not quantifying achievements ("I improved performance" vs. "I reduced API latency by 40%").
+6. Rambling — practice keeping answers concise and structured.
+7. Interrupting the interviewer.
+8. Claiming full credit for team achievements — use "I" for your actions and "we" for team outcomes.
+9. Not following up with a thank-you message.
+10. Accepting or declining an offer in the moment — always give yourself time to think.
+
+------------------------------------------------------------------
+SECTION 6: SALARY NEGOTIATION TIPS
+------------------------------------------------------------------
+
+- Research market rates for the role, level, and location before any negotiation.
+- Let the employer make the first offer if possible.
+- Counter with a specific number, not a range.
+- Always negotiate — the worst they can say is no, and most companies expect it.
+- Frame negotiation around your value and market data, not personal need.
+- Consider the full compensation package: base salary, bonus, equity (RSUs/options), 401k match, health insurance, PTO, remote flexibility, signing bonus.
+- If base is fixed, negotiate for signing bonus, additional equity, or earlier performance review.
+- Get all final offers in writing before resigning from your current role.
+
+------------------------------------------------------------------
+SECTION 7: EXPERIENCE LEVEL EXPECTATIONS
+------------------------------------------------------------------
+
+Entry Level (0-2 years):
+- Strong fundamentals are expected (data structures, algorithms, core domain knowledge).
+- Demonstrated ability to learn quickly.
+- Good communication and collaborative attitude.
+- 1-2 internships, projects, or contributions are differentiating factors.
+
+Mid Level (2-5 years):
+- Independently own and deliver features/projects.
+- Demonstrated ability to navigate ambiguity.
+- Beginning to mentor junior team members.
+- Strong grasp of system design basics.
+- Consistent track record of impact across multiple projects.
+
+Senior Level (5+ years):
+- Define technical direction and influence broader architecture.
+- Strong system design skills — design at scale.
+- Mentorship and knowledge-sharing are expected, not optional.
+- Stakeholder management and cross-team influence.
+- Demonstrated ability to deliver complex, multi-month initiatives.

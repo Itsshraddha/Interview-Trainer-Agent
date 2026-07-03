@@ -1,0 +1,156 @@
+KNOWLEDGE BASE: HR & Behavioral Interview Questions — STAR Method Guidelines
+============================================================================
+
+OVERVIEW
+Behavioral interviews assess how candidates have handled past situations to predict future performance. The STAR method structures answers: Situation (context) → Task (your responsibility) → Action (what YOU specifically did) → Result (measurable outcome).
+
+Golden rules:
+1. Always use "I", not "we" — interviewers want to know YOUR contribution.
+2. Quantify results wherever possible (%, $, time saved).
+3. Keep answers 90-120 seconds long (2 minutes maximum).
+4. Prepare 6-8 core stories that can be adapted to different questions.
+5. If the result was negative, show what you learned and what you would do differently.
+
+------------------------------------------------------------------
+SECTION 1: TEAMWORK & COLLABORATION
+------------------------------------------------------------------
+
+Q: Tell me about a time you worked effectively in a team.
+STAR Guide:
+- Situation: cross-functional project with diverse stakeholders.
+- Task: your specific role in the team.
+- Action: how you contributed, communicated, resolved disagreements, helped team members.
+- Result: project delivered successfully; mention team satisfaction or stakeholder feedback.
+Strong indicators: active listening, clarity in communication, willingness to help others, credit sharing.
+Red flags: taking sole credit, blaming team members, vague "we" statements.
+
+Q: Describe a conflict with a colleague and how you resolved it.
+STAR Guide:
+- Situation: specific professional disagreement (not personality clash).
+- Task: resolve while maintaining a productive working relationship.
+- Action: initiated a private conversation, listened to the other person's perspective, found common ground, escalated only if necessary.
+- Result: issue resolved, relationship preserved, describe any process improvements made.
+Strong indicators: emotional intelligence, ownership, focus on the issue not the person.
+Red flags: badmouthing the colleague, claiming you were always right, avoiding the conflict.
+
+Q: Give an example of when you helped a team member who was struggling.
+STAR Guide:
+- Situation: noticed a colleague facing difficulty (new hire, overloaded team member, knowledge gap).
+- Task: provide support without being asked (or when asked).
+- Action: specific help offered (pair programming, sharing documentation, covering tasks, informal mentoring).
+- Result: colleague's situation improved; team performance maintained.
+
+------------------------------------------------------------------
+SECTION 2: LEADERSHIP & INITIATIVE
+------------------------------------------------------------------
+
+Q: Tell me about a time you took initiative without being asked.
+STAR Guide:
+- Situation: a problem or opportunity you identified independently.
+- Task: no one assigned it to you — you chose to act.
+- Action: what steps you took, resources you gathered, people you involved.
+- Result: positive outcome for the team or organization; recognition received.
+Strong indicators: proactive mindset, ownership mentality, bias for action.
+
+Q: Describe a time you led a project or a team.
+STAR Guide:
+- Situation: project context, team size, timeline, and constraints.
+- Task: your leadership role (formal or informal).
+- Action: how you delegated, motivated, resolved blockers, made decisions under uncertainty.
+- Result: project outcome, metrics, team feedback, lessons learned.
+Strong indicators: structured thinking, communication, adaptability, accountability.
+
+Q: Tell me about a time you influenced a decision without having direct authority.
+STAR Guide:
+- Situation: you disagreed with or wanted to change a decision.
+- Task: persuade decision-makers without positional authority.
+- Action: built a data-driven case, sought allies, addressed objections, used storytelling.
+- Result: decision changed (or respectfully disagreed and committed if not).
+Strong indicators: communication skills, data-driven thinking, stakeholder management, resilience.
+
+------------------------------------------------------------------
+SECTION 3: PROBLEM-SOLVING & RESILIENCE
+------------------------------------------------------------------
+
+Q: Tell me about the most challenging project you have worked on.
+STAR Guide:
+- Situation: complex project with clear constraints (technical, resource, timeline).
+- Task: your specific responsibility.
+- Action: how you broke down the problem, adapted when things changed, asked for help when needed.
+- Result: outcome achieved; highlight learnings even if partially successful.
+
+Q: Describe a time you failed. What did you learn?
+STAR Guide:
+- Situation: real failure, not a humble-brag (e.g., missed a deadline, shipped a bug, gave wrong analysis).
+- Task: your responsibility in the failure.
+- Action: how you recognized the failure, communicated it transparently, remediated it.
+- Result: what you learned, what you changed in your process, how you applied that learning later.
+Strong indicators: self-awareness, honesty, growth mindset.
+Red flags: blaming others, no genuine reflection, failure that shows a critical character flaw.
+
+Q: Tell me about a time you had to deliver results under pressure.
+STAR Guide:
+- Situation: tight deadline, reduced resources, or unexpected obstacle.
+- Task: deliver without compromising quality.
+- Action: prioritized ruthlessly, communicated proactively about risks, asked for help, worked efficiently.
+- Result: delivered on time/scope, or negotiated scope change transparently.
+
+------------------------------------------------------------------
+SECTION 4: ADAPTABILITY & LEARNING
+------------------------------------------------------------------
+
+Q: Tell me about a time you had to learn something new quickly.
+STAR Guide:
+- Situation: new technology, role, domain, or process introduced with a short ramp-up time.
+- Task: become productive quickly.
+- Action: specific learning strategies used (documentation, mentors, practice projects, courses).
+- Result: proficiency achieved within the timeframe; contribution made to the team.
+
+Q: Describe a time when you had to adapt to a significant change at work.
+STAR Guide:
+- Situation: organizational change, pivot in project direction, new management.
+- Task: adapt while maintaining performance.
+- Action: how you processed the change, aligned with new direction, helped teammates adapt.
+- Result: successfully navigated the change; positive outcome.
+
+------------------------------------------------------------------
+SECTION 5: COMMUNICATION & FEEDBACK
+------------------------------------------------------------------
+
+Q: Give an example of when you gave difficult feedback to a colleague.
+STAR Guide:
+- Situation: a colleague whose behavior or work quality needed to improve.
+- Task: deliver feedback that was constructive, not just critical.
+- Action: chose the right time/place (private), led with specific observable behavior (not personality), listened to their response, followed up.
+- Result: colleague improved, relationship maintained.
+
+Q: Tell me about a time you received critical feedback and how you responded.
+STAR Guide:
+- Situation: meaningful feedback from a manager or peer.
+- Task: process and act on the feedback.
+- Action: listened without defensiveness, clarified, created an action plan, followed up.
+- Result: measurable improvement in the area of feedback.
+Strong indicators: openness to feedback, continuous improvement mindset.
+
+------------------------------------------------------------------
+SECTION 6: MOTIVATION & CAREER
+------------------------------------------------------------------
+
+Q: Why do you want this role / Why are you leaving your current company?
+Guidelines:
+- Focus on pull factors (growth opportunity, mission alignment, technology stack) not push factors (bad manager, low pay).
+- Research the company and role — reference specific aspects you find compelling.
+- Connect your career goals to what the role offers.
+- Never badmouth a previous employer — even if the situation was genuinely difficult.
+
+Q: Where do you see yourself in 5 years?
+Guidelines:
+- Show ambition and growth mindset, but also realistic planning.
+- Connect your 5-year goal to what you can learn and build in this role.
+- Employers want to see you will stay and grow (not leave in 6 months), and that you have a direction.
+- For tech roles: aspiring to senior IC, tech lead, or management are all valid — pick one that is authentic.
+
+Q: What are your greatest strengths and weaknesses?
+Guidelines:
+Strength: pick one highly relevant to the role, give a concrete example.
+Weakness: choose a real weakness that is not a core job requirement, and immediately explain what you are actively doing to improve it. Avoid clichés like "I work too hard" — they signal lack of self-awareness.

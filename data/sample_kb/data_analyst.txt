@@ -1,0 +1,120 @@
+KNOWLEDGE BASE: Data Analyst Interview Questions & Guidelines
+=============================================================
+
+ROLE: Data Analyst / Business Intelligence Analyst / Data Scientist (Junior)
+EXPERIENCE LEVELS: Entry (0-2 yrs), Mid (2-5 yrs), Senior (5+ yrs)
+
+------------------------------------------------------------------
+SECTION 1: SQL & DATA MANIPULATION
+------------------------------------------------------------------
+
+Q: What is the difference between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN?
+A: INNER JOIN returns only matching rows from both tables. LEFT JOIN returns all rows from the left table plus matching rows from the right (NULLs for non-matches). RIGHT JOIN is the mirror. FULL OUTER JOIN returns all rows from both tables (NULLs where no match). Use LEFT JOIN when you want all records from the primary entity regardless of related data existing.
+Tips:
+- Be ready to write a query demonstrating each.
+- Mention performance implications of large JOINs (indexes on join keys).
+
+Q: Explain the difference between WHERE and HAVING clauses.
+A: WHERE filters rows before aggregation. HAVING filters groups after aggregation (used with GROUP BY). Example: WHERE salary > 50000 filters individual rows; HAVING AVG(salary) > 50000 filters department groups.
+Tips:
+- Common interview mistake: trying to use aggregate functions in WHERE — always use HAVING.
+- Discuss query execution order: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY.
+
+Q: What are window functions? Give an example.
+A: Window functions perform calculations across a set of rows related to the current row without collapsing rows (unlike GROUP BY). Examples: ROW_NUMBER() OVER (PARTITION BY dept ORDER BY salary DESC), RANK(), DENSE_RANK(), LAG(), LEAD(), SUM() OVER (ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) for rolling averages. Syntax: function() OVER (PARTITION BY ... ORDER BY ...).
+Tips:
+- Practice ROW_NUMBER() for deduplication (finding latest record per group).
+- Rolling 7-day sum is a very common analytics interview question.
+
+Q: How would you find duplicate records in a table?
+A: SELECT email, COUNT(*) FROM users GROUP BY email HAVING COUNT(*) > 1. To return full duplicate rows: use a CTE with ROW_NUMBER() OVER (PARTITION BY email ORDER BY created_at) and filter where row_num > 1.
+Tips:
+- Discuss the impact of duplicates on aggregations and joins.
+- Mention deduplication strategies: DELETE with CTE, or mark soft-delete.
+
+Q: Explain indexing in databases. When should you add an index?
+A: Indexes create a sorted data structure (B-tree or hash) for faster lookups. Add indexes on: columns frequently used in WHERE, JOIN, or ORDER BY clauses; foreign keys; high-cardinality columns. Avoid over-indexing: indexes slow down INSERT/UPDATE/DELETE because they must be maintained. A covering index (includes all queried columns) can avoid table lookups entirely.
+Tips:
+- Discuss EXPLAIN/EXPLAIN ANALYZE to understand query plans.
+- Composite indexes — mention column order matters (leftmost prefix rule).
+
+------------------------------------------------------------------
+SECTION 2: STATISTICS & PROBABILITY
+------------------------------------------------------------------
+
+Q: Explain the difference between mean, median, and mode. When is each most appropriate?
+A: Mean (average) is sensitive to outliers; best for normally distributed data. Median (middle value) is robust to outliers; best for skewed distributions (e.g., income data). Mode (most frequent value) is used for categorical data. Example: for housing prices, median is preferred since outlier mansions would distort the mean.
+Tips:
+- Be able to compute all three manually from a small dataset.
+- Discuss the relationship to data skewness.
+
+Q: What is the Central Limit Theorem (CLT)?
+A: The CLT states that the distribution of sample means approaches a normal distribution as sample size increases, regardless of the underlying population distribution — given the samples are independent and the population has a finite mean and variance. Practical implication: justifies using normal-distribution-based hypothesis tests even for non-normal populations when n ≥ 30.
+Tips:
+- Relate to confidence intervals and A/B testing.
+- Mention exceptions: heavy-tailed distributions, small samples.
+
+Q: What is p-value and statistical significance?
+A: The p-value is the probability of observing a test statistic at least as extreme as the one observed, assuming the null hypothesis is true. A p-value < α (commonly 0.05) leads to rejecting the null hypothesis. Statistical significance ≠ practical significance — a tiny difference can be statistically significant with a large enough sample.
+Tips:
+- Common misconception: p-value is NOT the probability the null hypothesis is true.
+- Discuss Type I (false positive) and Type II (false negative) errors.
+- Mention the replication crisis and why p-hacking is problematic.
+
+Q: Explain correlation vs. causation.
+A: Correlation measures the statistical relationship between two variables (Pearson's r from -1 to 1). Causation means one variable directly influences the other. Correlation does not imply causation — confounding variables, reverse causation, or coincidence can produce correlation without a causal link. Establishing causation requires controlled experiments (RCTs) or causal inference methods (difference-in-differences, instrumental variables).
+Tips:
+- Have a memorable example ready (e.g., ice cream sales and drowning rates — both caused by hot weather).
+- Mention A/B testing as the gold standard for establishing causation in product analytics.
+
+------------------------------------------------------------------
+SECTION 3: DATA VISUALIZATION & TOOLS
+------------------------------------------------------------------
+
+Q: What is the best chart type for each scenario?
+A: Bar chart: comparing discrete categories. Line chart: trends over time. Scatter plot: relationship between two continuous variables. Histogram: distribution of a single continuous variable. Box plot: distribution + outliers across groups. Heatmap: correlation matrix or two-dimensional frequency. Pie chart: part-to-whole (use sparingly, only with few categories that sum to a meaningful whole).
+Tips:
+- Discuss accessibility (colorblind-safe palettes) for a strong answer.
+- Mention that 3D charts almost always reduce clarity.
+
+Q: What are the key metrics you would track for an e-commerce business?
+A: Revenue (GMV, net revenue), Conversion Rate (sessions → purchase), Average Order Value (AOV), Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV/LTV), Churn Rate, Return Rate, Cart Abandonment Rate, Daily/Monthly Active Users. Track leading indicators (add-to-cart rate) and lagging indicators (revenue) together.
+Tips:
+- Structure your answer around the AARRR funnel (Acquisition, Activation, Retention, Revenue, Referral).
+- Show that you understand the difference between vanity metrics and actionable metrics.
+
+Q: How would you approach an A/B test for a new website feature?
+A: (1) Define hypothesis and success metric. (2) Calculate required sample size (power analysis: α=0.05, power=0.80, MDE). (3) Randomly assign users to control/treatment groups. (4) Run the test for a full business cycle (at least 1-2 weeks). (5) Check for novelty effects and sample ratio mismatch. (6) Analyze results with the appropriate test (t-test, chi-square). (7) Make a decision and document learnings.
+Tips:
+- Discuss guardrail metrics to ensure no harm to secondary metrics.
+- Mention the multiple testing problem if testing multiple variants.
+
+------------------------------------------------------------------
+SECTION 4: PYTHON FOR DATA ANALYSIS
+------------------------------------------------------------------
+
+Q: What is the difference between Pandas Series and DataFrame?
+A: A Series is a one-dimensional labeled array (like a column). A DataFrame is a two-dimensional table of Series objects sharing the same index. Both support vectorized operations, missing value handling (NaN), and label-based indexing (.loc) as well as integer-based indexing (.iloc).
+Tips:
+- Demonstrate common operations: groupby, merge, pivot_table, apply.
+- Discuss memory efficiency for large datasets: use chunking, appropriate dtypes, or Polars/Dask.
+
+Q: How do you handle missing values in a dataset?
+A: Options: (1) Drop rows/columns (dropna) — safe if data is MCAR and small proportion. (2) Impute with mean/median/mode (fillna) — simple but can distort distributions. (3) Forward/backward fill (ffill/bfill) — for time series. (4) KNN or model-based imputation — more sophisticated, preserves relationships. (5) Flag missingness as a feature for ML models. The right choice depends on why data is missing (MCAR, MAR, MNAR).
+Tips:
+- Always visualize missingness patterns first (missingno library).
+- For predictive models, mention that tree-based models (XGBoost) handle NaN natively.
+
+------------------------------------------------------------------
+SECTION 5: BUSINESS ACUMEN
+------------------------------------------------------------------
+
+Q: Walk me through how you would solve a business problem with data.
+STAR Guide:
+- Situation: describe the business question (e.g., "why did churn increase last quarter?").
+- Task: your role in the analysis.
+- Action: data discovery → hypothesis generation → analysis (segmentation, cohort analysis, regression) → visualization.
+- Result: actionable insight delivered, business impact (e.g., "Identified that mobile users on iOS v15 had 3× higher churn due to a payment bug — fixed in 2 weeks, reducing churn by 18%").
+
+Q: How do you communicate complex findings to non-technical stakeholders?
+A: Lead with the business insight and recommendation, not the methodology. Use simple visuals. Quantify impact in business terms (revenue, cost, time). Anticipate questions and prepare backup slides with technical details. Tailor language to the audience — avoid jargon. Use storytelling: situation → complication → resolution.
