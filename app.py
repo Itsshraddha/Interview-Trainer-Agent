@@ -1,19 +1,3 @@
-"""
-app.py
-======
-Streamlit frontend for the Interview Trainer Agent.
-
-Page layout
------------
-Left sidebar : Input form (name, role, experience, file upload, generate button)
-Main area    : Spinner → rendered prep kit (expandable sections per question)
-              → Download as Markdown button
-
-Usage
------
-    streamlit run app.py
-"""
-
 import io
 import sys
 import pathlib
@@ -33,7 +17,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── Custom CSS ────────────────────────────────────────────────────────────────
+# ── Custom CSS 
 st.markdown(
     """
     <style>
@@ -207,7 +191,7 @@ st.markdown(
 )
 
 
-# ── Sidebar — Input form ──────────────────────────────────────────────────────
+# ── Sidebar — Input form 
 with st.sidebar:
     st.markdown(
         """
@@ -326,8 +310,7 @@ with st.sidebar:
         )
 
 
-# ── Main area ─────────────────────────────────────────────────────────────────
-
+# ── Main area 
 # Initialise session state to persist the last generated kit across reruns.
 if "prep_kit" not in st.session_state:
     st.session_state.prep_kit = None
@@ -338,7 +321,7 @@ if "last_profile" not in st.session_state:
 def _render_prep_kit(kit: dict, profile: dict) -> None:
     """Render the prep kit dict as structured Streamlit UI components."""
 
-    # ── Kit header with download ──────────────────────────────────────────────
+    # ── Kit header with download 
     markdown_content = _kit_to_markdown(kit, profile)
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -366,7 +349,7 @@ def _render_prep_kit(kit: dict, profile: dict) -> None:
 
     st.divider()
 
-    # ── Technical Questions ───────────────────────────────────────────────────
+    # ── Technical Questions 
     st.markdown(
         '<div class="section-pill">💻 Technical Questions</div>',
         unsafe_allow_html=True,
@@ -400,7 +383,7 @@ def _render_prep_kit(kit: dict, profile: dict) -> None:
 
     st.divider()
 
-    # ── Behavioral / HR Questions ─────────────────────────────────────────────
+    # ── Behavioral / HR Questions
     st.markdown(
         '<div class="section-pill" style="background:#7c3aed;">🤝 Behavioral / HR Questions — STAR Format</div>',
         unsafe_allow_html=True,
@@ -434,7 +417,7 @@ def _render_prep_kit(kit: dict, profile: dict) -> None:
 
     st.divider()
 
-    # ── Confidence Checklist ──────────────────────────────────────────────────
+    # ── Confidence Checklist 
     st.markdown(
         '<div class="section-pill" style="background:#15803d;">✅ Confidence Checklist</div>',
         unsafe_allow_html=True,
@@ -522,7 +505,7 @@ def _kit_to_markdown(kit: dict, profile: dict) -> str:
     return "\n".join(lines)
 
 
-# ── Generate on button press ──────────────────────────────────────────────────
+# ── Generate on button press
 if generate_btn:
     profile = {
         "name": candidate_name,
@@ -580,11 +563,11 @@ if generate_btn:
             st.stop()
 
 
-# ── Render the stored prep kit (persists across reruns) ───────────────────────
+# ── Render the stored prep kit (persists across reruns) 
 if st.session_state.prep_kit is not None:
     _render_prep_kit(st.session_state.prep_kit, st.session_state.last_profile)
 else:
-    # ── Hero banner ───────────────────────────────────────────────────────────
+    # ── Hero banner
     st.markdown(
         """
         <div class="hero-banner">
@@ -599,7 +582,7 @@ else:
         unsafe_allow_html=True,
     )
 
-    # ── Feature cards ─────────────────────────────────────────────────────────
+    # ── Feature cards
     st.markdown(
         """
         <div class="feature-grid">
